@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice 4</title>
+    <title>Job Application Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="min-h-screen mx-auto">
+    <header class="mx-auto pl-32 w-[80%] pt-6">
+        <h1 class="text-3xl pb-5 font-bold ">Job Application Tracker</h1>
+    <div class="grid grid-cols-3">
+        <div>
+         <p>Total</p>
+         <p id="total" class="font-bold">8</p>
+        </div>
+        <div>
+        <p>Interview</p>
+         <p id="interviewCount" class="text-green-700 font-bold">0</p>
+        </div>
+        <div>
+         <p>Rejected</p>
+         <p id="rejectedCount" class="text-red-500 font-bold">0</p>
+        </div>
+    </div>
+    </header>
     
+    <main class="mx-auto pl-32 w-[80%] pt-6">
+        <h1 class="pb-3">Available Jobs</h1>
+        <div>
+            <button  class="px-8 text-white font-medium rounded-sm py-2 bg-blue-600" id="all-filter-btn">All</button>
+            <button class="px-5 py-2 "  id="interview-filter-btn">Interview</button>
+            <button  class="px-5 py-2" id="rejected-filter-btn">Rejected</button>
+        </div>
+    </main>
 </body>
 </html>
