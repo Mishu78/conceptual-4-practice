@@ -27,10 +27,12 @@ function calculateCount(){
 calculateCount();
 
 function toggleStyle(id){
+    //remove blue bg if any button has it
    allFilterBtn.classList.remove('bg-blue-600','text-white');
    interviewFilterBtn.classList.remove('bg-blue-600','text-white');
    rejectedFilterBtn.classList.remove('bg-blue-600','text-white');
  
+   //adding blue for current button
    const selected=document.getElementById(id);
    selected.classList.add('bg-blue-600','text-white');
 }
