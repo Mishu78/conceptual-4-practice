@@ -6,6 +6,8 @@
     <title>Job Application Tracker</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!--fonts awesome link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body class="min-h-screen mx-auto">
     <header class="mx-auto pl-32 w-[80%] pt-6">
@@ -34,13 +36,36 @@
             <button  class="px-5 py-2" id="rejected-filter-btn">Rejected</button>
         </div>
 
-        <section id="jobs">
+        <section id="allCard">
             <!--card 1-->
-            <div>
+            <div class="card flex flex-row justify-between">
                 <!--main part 1-->
-               <div></div>
+               <div class=space-y-6>
+                <!--sub part 1-->
+                <div>
+                    <h1 class="company-name">Mobile First Corp</h1>
+                    <p class="company-position">React Native Developer</p>
+
+                </div>
+                <!--sub part 2-->
+                <div>
+                    <p class="company-type">Remote • Full-time • $130,000 - $175,000</p>
+                </div>
+                <!--sub part 3-->
+               <div>
+                <p>NOT APPLIED</p>
+                <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+               </div>
+                <!--sub part 4-->
+                <div class="flex gap-5">
+                    <button class="interview-btn text-green-500 border-2 border-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
+                    <button class="rejected-btn text-red-500 border-2 border-red-500 rounded-sm px-4 py-2 ">REJECTED</button>
+                </div>
+               </div>
                <!--Main part 2-->
-               <div></div>
+               <div>
+                <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
+               </div>
             </div>
         </section>
     </main>
