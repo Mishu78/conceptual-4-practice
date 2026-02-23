@@ -58,16 +58,18 @@ mainContainer.addEventListener('click',function(event){
 
 // console.log(companyName,companyPosition,companyType,status1,notes);
 
+parenNode.querySelector('.status1').innerText="Interview" 
+
 const cardInfo={
     companyName,
     companyPosition,
     companyType,
-    status1,
+    status1:'Interview',
     notes,
 }
 //job already exist or not
 const jobExist = interviewList.find(item => item.companyName == cardInfo.companyName);
-parenNode.querySelector('.status1').innerText="Interview"
+
 if(!jobExist){
     interviewList.push(cardInfo);
 }
@@ -85,7 +87,7 @@ for(let interview of interviewList){
     div.innerHTML=` <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">Mobile First Corp</h1>
+                    <h1 class="company-name font-medium text-xl mb-2">${interview.companyName}</h1>
                     <p class="company-position text-base text-gray-700">React Native Developer</p>
 
                 </div>
@@ -95,7 +97,7 @@ for(let interview of interviewList){
                 </div>
                 <!--sub part 3-->
                <div>
-                <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
+                <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">${interview.status1}</p>
                 <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                </div>
                 <!--sub part 4-->
