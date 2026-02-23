@@ -14,7 +14,7 @@ bucket.appendChild(para);
 
 3. What is Event Bubbling? And how does it work?
 ans:It is actually like a process where an event starts from the element and moves to upward through its parents element in the DOM tree. This type of upward movement is called event bubbling.
-For example there is a button inside a div.if we click the button,the event runs of the button.The the parent which is the div event runs and finally the body which is the parent of the div and body's event runs.
+For example there is a button inside a div.if we click the button,the event runs of the button.The the parent div event runs and finally the body which is the parent of the div and body's event runs.
 
 5. What is Event Delegation in JavaScript? Why is it useful?
 ans:It means adding one event listner to a parent element instead of adding many eventlistners to child elements. This is usefull becuase it makes the code shorter and more efficient.
