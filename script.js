@@ -229,6 +229,21 @@ for(let rejected of rejectedList){
       calculateCount();
 } 
 
+const availableCount=document.querySelector('.available-count');
+function calculateCount(){
+    const totalCards=allCardSection.children.length;
+    total.innerHTML=totalCards;
+
+    availableCount.innerText=`${totalCards} job${totalCards !=1 ? 's':''}`;
+    const emptyAll= document.getElementById('empty-all');
+    if(totalCards===0){
+        emptyAll.classList.remove('hidden');
+    }
+    else{
+        emptyAll.classList.add('hidden');
+    }
+}
+
 calculateCount();
 
 
