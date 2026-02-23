@@ -2,7 +2,7 @@
 // we are putting the list of interview information when interview button is clicked in blank array 
 let interviewList=[];
 let rejectedList=[];
-let currentStatus='all'
+let currentStatus='all-filter-btn'
 let total= document.getElementById('total');
 let interviewCount=document.getElementById('interviewCount');
 let rejectedCount=document.getElementById('rejectedCount');
@@ -27,6 +27,28 @@ allCardSection.addEventListener("click",function(event){
 
 const mainContainer=document.querySelector('main');
 const filteredSection=document.getElementById('filtered-section');
+filteredSection.addEventListener('click',function(event){
+    const btnDelete=event.target.closest('.btn-delete')
+    if(btnDelete){
+        const card=btnDelete.closest('.card');
+    
+    if(card){
+        const companyName=card.querySelector('.company-name').innerText;
+        interviewList=interviewList.filter(item => item.companyName !== companyName);
+
+        rejectedList=rejectedList.filter(item => item.companyName !== companyName);
+        card.remove();
+
+        if(currentStatus === "interview-filter-btn"){
+            renderInterview();
+        }
+        else if(currentStatus === "rejected-filter-btn"){
+            renderRejected();
+        }
+        calculateCount();
+    }
+}
+})
 
 // const allFilterBtn=document.getElementById('all-filter-btn').addEventListener('click',function(){
 //     alert('clicked from add event ')
@@ -149,7 +171,13 @@ else if(currentStatus =="rejected-filter-btn"){
 })
 
 function renderInterview(){
-filteredSection.innerHTML=''
+filteredSection.innerHTML='';
+
+if(interviewList.length === 0){
+    renderEmpty("No Interview Jobs");
+    calculateCount();
+    return;
+}
 for(let interview of interviewList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
@@ -188,7 +216,13 @@ for(let interview of interviewList){
 
 
 function renderRejected(){
-filteredSection.innerHTML=''
+filteredSection.innerHTML='';
+
+if(rejectedList.length === 0){
+    renderEmpty("No rejected Jobs");
+    calculateCount();
+    return; 
+}
 for(let rejected of rejectedList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
@@ -233,7 +267,7 @@ function calculateCount(){
     rejectedCount.innerHTML=rejectedList.length;
     availableCount.innerText=`${totalCards} job${totalCards !=1 ? 's':''}`;
     const emptyAll= document.getElementById('empty-all');
-    if(totalCards===0){
+    if(totalCards===0 && currentStatus==='all-filter-btn'){
         emptyAll.classList.remove('hidden');
     }
     else{
@@ -241,6 +275,15 @@ function calculateCount(){
     }
 }
 
+function renderEmpty(message){
+    filteredSection.innerHTML= `
+     <div class="text-center flex flex-col items-center justify-center mt-40">
+            <img class="w-[70px]" src="./images/jobs.png" alt="">
+            <h1 class="font-bold text-2xl">${message}</h1>
+            <p class="text-xl">Check back soon for new job opportunities</p>
+        </div>
+    `
+}
 
 calculateCount();
 
