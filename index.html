@@ -10,27 +10,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body class="min-h-screen mx-auto">
-    <header class="mx-auto pl-32 w-[80%] pt-6">
-        <h1 class="text-3xl pb-5 font-bold ">Job Application Tracker</h1>
-    <div class="grid grid-cols-3">
-        <div>
+    <header class="mx-auto lg:pl-32 lg:w-[80%] pt-6 px-3 lg:px-0">
+        <h1 class="lg:text-3xl text-sm  pb-5 font-bold ">Job Application Tracker</h1>
+    <div class="grid grid-cols-3 ">
+        <div class=" flex lg:flex-col flex-row gap-2 lg:gap-0">
          <p>Total</p>
          <p id="total" class="font-bold">0</p>
         </div>
-        <div>
+        <div class=" flex lg:flex-col flex-row gap-2 lg:gap-0">
         <p>Interview</p>
          <p id="interviewCount" class="text-green-700 font-bold">0</p>
         </div>
-        <div>
+        <div class=" flex lg:flex-col flex-row gap-2 lg:gap-0">
          <p>Rejected</p>
          <p id="rejectedCount" class="text-red-500 font-bold">0</p>
         </div>
     </div>
     </header>
     
-    <main class="mx-auto pl-32 w-[80%] pt-6">
+    <main class="mx-auto lg:pl-32 lg:w-[80%] pt-6 pb-10 px-3 lg:px-0">
         <div class="pb-3 flex flex-row justify-between ">
-        <h1 class="font-bold  text-xl">Available Jobs</h1>
+        <h1 class="font-bold  lg:text-xl text-sm">Available Jobs</h1>
         <p class="text-sm available-count">8 jobs</p>
         </div>
        
@@ -51,7 +51,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">Mobile First Corp</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">Mobile First Corp</h1>
                     <p class="company-position text-base text-gray-700">React Native Developer</p>
 
                 </div>
@@ -62,7 +62,7 @@
                 <!--sub part 3-->
                <div>
                 <p class=" status1 bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2">NOT APPLIED</p>
-                <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <p class="notes lg:text-sm text-xs">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -82,7 +82,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">WebFlow Agency</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">WebFlow Agency</h1>
                     <p class="company-position text-base text-gray-700">Web Designer & Developer</p>
 
                 </div>
@@ -93,7 +93,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                <p class="notes lg:text-sm text-xs">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -114,7 +114,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">DataViz Solutions</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">DataViz Solutions</h1>
                     <p class="company-position text-base text-gray-700">Data Visualization Specialist</p>
 
                 </div>
@@ -125,7 +125,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                <p class="notes lg:text-sm text-xs">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -146,7 +146,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">CloudFirst Inc</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">CloudFirst Inc</h1>
                     <p class="company-position text-base text-gray-700">Backend Developer</p>
 
                 </div>
@@ -157,7 +157,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                <p class="notes lg:text-sm text-xs">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -177,7 +177,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">Innovation Labs</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">Innovation Labs</h1>
                     <p class="company-position text-base text-gray-700">UI/UX Engineer</p>
 
                 </div>
@@ -188,7 +188,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                <p class="notes lg:text-sm text-xs">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -208,7 +208,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">MegaCorp Solutions</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">MegaCorp Solutions</h1>
                     <p class="company-position text-base text-gray-700">JavaScript Developer</p>
 
                 </div>
@@ -219,7 +219,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation and professional development opportunities.</p>
+                <p class="notes lg:text-sm text-xs">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation and professional development opportunities.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -239,7 +239,7 @@
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">StartupXYZ</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">StartupXYZ</h1>
                     <p class="company-position text-base text-gray-700">Full Stack Engineer</p>
 
                 </div>
@@ -250,7 +250,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                <p class="notes lg:text-sm text-xs">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
@@ -265,12 +265,12 @@
             </div>
 
              <!--card 8-->
-            <div class="card flex flex-row justify-between">
+            <div class="card flex flex-row justify-between mb-28 pb-28">
                 <!--main part 1-->
                <div class="space-y-6">
                 <!--sub part 1-->
                 <div>
-                    <h1 class="company-name font-medium text-xl mb-2">TechCorp Industries</h1>
+                    <h1 class="company-name font-medium lg:text-xl mb-2">TechCorp Industries</h1>
                     <p class="company-position text-base text-gray-700">Senior Frontend Developer</p>
 
                 </div>
@@ -281,7 +281,7 @@
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
-                <p class="notes">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. Work with a talented team on cutting-edge projects.</p>
+                <p class="notes lg:text-sm text-xs">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. Work with a talented team on cutting-edge projects.</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
