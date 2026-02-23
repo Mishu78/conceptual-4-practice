@@ -36,6 +36,15 @@ function toggleStyle(id){
    //adding blue for current button
    const selected=document.getElementById(id);
    selected.classList.add('bg-blue-600','text-white');
+
+
+if(id=='interview-filter-btn'){
+    allCardSection.classList.add('hidden')
+    filteredSection.classList.remove('hidden')
+} else if(id=="all-filter-btn"){
+    allCardSection.classList.remove('hidden');
+    filteredSection.classList.add("hidden");
+}
 }
 
 mainContainer.addEventListener('click',function(event){
@@ -44,20 +53,21 @@ mainContainer.addEventListener('click',function(event){
  const companyName=parenNode.querySelector('.company-name').innerText;
  const companyPosition=parenNode.querySelector('.company-position').innerText;
  const companyType=parenNode.querySelector('.company-type').innerText;
- const status=parenNode.querySelector('.status').innerText;
+ const status1=parenNode.querySelector('.status1').innerText;
  const notes=parenNode.querySelector('.notes').innerText;
 
-// console.log(companyName,companyPosition,companyType,status,notes);
+// console.log(companyName,companyPosition,companyType,status1,notes);
 
 const cardInfo={
     companyName,
     companyPosition,
     companyType,
-    status,
+    status1,
     notes,
 }
 //job already exist or not
 const jobExist = interviewList.find(item => item.companyName == cardInfo.companyName);
+parenNode.querySelector('.status1').innerText="Interview"
 if(!jobExist){
     interviewList.push(cardInfo);
 }
@@ -72,6 +82,35 @@ filteredSection.innerHTML=''
 for(let interview of interviewList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
+    div.innerHTML=` <div class="space-y-6">
+                <!--sub part 1-->
+                <div>
+                    <h1 class="company-name font-medium text-xl mb-2">Mobile First Corp</h1>
+                    <p class="company-position text-base text-gray-700">React Native Developer</p>
+
+                </div>
+                <!--sub part 2-->
+                <div>
+                    <p class="company-type text-sm text-gray-600">Remote • Full-time • $130,000 - $175,000</p>
+                </div>
+                <!--sub part 3-->
+               <div>
+                <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">NOT APPLIED</p>
+                <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+               </div>
+                <!--sub part 4-->
+                <div class="flex gap-5">
+                    <button class="interview-btn text-green-500 border-2 border-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
+                    <button class="rejected-btn text-red-500 border-2 border-red-500 rounded-sm px-4 py-2 ">REJECTED</button>
+                </div>
+               </div>
+               <!--Main part 2-->
+               <div>
+                <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
+               </div>
+            </div>
+            `
+            filteredSection.appendChild(div)
 }
 
 }
