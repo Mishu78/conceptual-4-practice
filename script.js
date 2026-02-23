@@ -277,10 +277,10 @@ function calculateCount(){
 
 function renderEmpty(message){
     filteredSection.innerHTML= `
-     <div class="text-center flex flex-col items-center justify-center mt-40">
+     <div class="text-center flex flex-col items-center justify-center lg:mt-40 mt-20">
             <img class="w-[70px]" src="./images/jobs.png" alt="">
-            <h1 class="font-bold text-2xl">${message}</h1>
-            <p class="text-xl">Check back soon for new job opportunities</p>
+            <h1 class="font-bold lg:text-2xl text-xl">${message}</h1>
+            <p class="lg:text-xl text-sm">Check back soon for new job opportunities</p>
         </div>
     `
 }
