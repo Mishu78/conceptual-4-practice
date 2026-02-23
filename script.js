@@ -31,11 +31,7 @@ const filteredSection=document.getElementById('filtered-section');
 // const allFilterBtn=document.getElementById('all-filter-btn').addEventListener('click',function(){
 //     alert('clicked from add event ')
 // })
-function calculateCount(){
-    total.innerHTML=allCardSection.children.length;
-    interviewCount.innerText=interviewList.length;
-    rejectedCount.innerHTML=rejectedList.length;
-}
+
 
 
 function toggleStyle(id){
@@ -233,7 +229,8 @@ const availableCount=document.querySelector('.available-count');
 function calculateCount(){
     const totalCards=allCardSection.children.length;
     total.innerHTML=totalCards;
-
+    interviewCount.innerText=interviewList.length;
+    rejectedCount.innerHTML=rejectedList.length;
     availableCount.innerText=`${totalCards} job${totalCards !=1 ? 's':''}`;
     const emptyAll= document.getElementById('empty-all');
     if(totalCards===0){
@@ -243,6 +240,7 @@ function calculateCount(){
         emptyAll.classList.add('hidden');
     }
 }
+
 
 calculateCount();
 
