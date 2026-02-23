@@ -14,7 +14,16 @@ const interviewFilterBtn=document.getElementById('interview-filter-btn');
 const rejectedFilterBtn=document.getElementById('rejected-filter-btn');
 
 
-const allCardSection=document.getElementById("allCards")
+const allCardSection=document.getElementById("allCards");
+allCardSection.addEventListener("click",function(event){
+    if(event.target.closest('.btn-delete')){
+        const card=event.target.closest('.card');
+        if(card){
+            card.remove();
+            calculateCount();
+        }
+    }
+})
 
 const mainContainer=document.querySelector('main');
 const filteredSection=document.getElementById('filtered-section');
@@ -219,6 +228,8 @@ for(let rejected of rejectedList){
 }
       calculateCount();
 } 
+
+calculateCount();
 
 
 

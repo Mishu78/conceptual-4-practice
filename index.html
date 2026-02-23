@@ -29,7 +29,11 @@
     </header>
     
     <main class="mx-auto pl-32 w-[80%] pt-6">
-        <h1 class="pb-3 font-bold  text-xl">Available Jobs</h1>
+        <div class="pb-3 flex flex-row justify-between ">
+        <h1 class="font-bold  text-xl">Available Jobs</h1>
+        <p class="text-sm">8 jobs</p>
+        </div>
+       
         <div class="mb-4">
             <button onclick="toggleStyle('all-filter-btn')" class="px-8 text-white font-medium rounded-sm py-2 bg-blue-600" id="all-filter-btn">All</button>
             <button  onclick="toggleStyle('interview-filter-btn')" class="px-5 py-2 "  id="interview-filter-btn">Interview</button>
@@ -292,6 +296,11 @@
             </div>
 
             
+        </section>
+        <section class="hidden">
+            <img src="./" alt="">
+            <h1 class="font-bold text-2xl">No jobs available</h1>
+            <p class="text-xl">Check back soo for new job opportunities</p>
         </section>
     </main>
     <script src="./script.js"></script>
