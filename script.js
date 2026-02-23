@@ -44,6 +44,7 @@ function toggleStyle(id){
 if(id=='interview-filter-btn'){
     allCardSection.classList.add('hidden')
     filteredSection.classList.remove('hidden')
+    renderInterview();
 } else if(id=="all-filter-btn"){
     allCardSection.classList.remove('hidden');
     filteredSection.classList.add("hidden");
@@ -84,7 +85,15 @@ if(!jobExist){
 
 
 rejectedList=rejectedList.filter(item=>item.companyName != cardInfo.companyName)
-renderInterview();
+if(currentStatus == "interview-filter-btn"){
+    renderInterview();
+}
+else if(currentStatus =="rejected-filter-btn"){
+    renderRejected();
+}
+    calculateCount()
+
+
 //console.log(interviewList)
  }
 
@@ -122,6 +131,9 @@ interviewList=interviewList.filter(item=>item.companyName != cardInfo.companyNam
 if(currentStatus == "interview-filter-btn"){
     renderInterview();
 }
+else if(currentStatus =="rejected-filter-btn"){
+    renderRejected();
+}
     calculateCount()
 
 
@@ -140,17 +152,17 @@ for(let interview of interviewList){
                 <!--sub part 1-->
                 <div>
                     <h1 class="company-name font-medium text-xl mb-2">${interview.companyName}</h1>
-                    <p class="company-position text-base text-gray-700">React Native Developer</p>
+                    <p class="company-position text-base text-gray-700">${interview.companyPosition}</p>
 
                 </div>
                 <!--sub part 2-->
                 <div>
-                    <p class="company-type text-sm text-gray-600">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="company-type text-sm text-gray-600">${interview.companyType}</p>
                 </div>
                 <!--sub part 3-->
                <div>
                 <p class="bg-sky-100 w-[130px] px-3 py-2 font-medium mb-2 status1">${interview.status1}</p>
-                <p class="notes">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <p class="notes">${interview.notes}</p>
                </div>
                 <!--sub part 4-->
                 <div class="flex gap-5">
