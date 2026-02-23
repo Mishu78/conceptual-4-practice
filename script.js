@@ -25,7 +25,7 @@ function calculateCount(){
     interviewCount.innerText=interviewList.length;
     rejectedCount.innerHTML=rejectedList.length;
 }
-calculateCount();
+
 
 function toggleStyle(id){
     //remove blue bg if any button has it
@@ -114,7 +114,7 @@ for(let interview of interviewList){
             `
             filteredSection.appendChild(div)
 }
-
+      calculateCount();
 }
 
 
