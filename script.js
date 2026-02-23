@@ -39,7 +39,7 @@ function toggleStyle(id){
 }
 
 mainContainer.addEventListener('click',function(event){
- if(event.target.classList.contains)('interview-btn'){
+ if(event.target.classList.contains('interview-btn')){
      const parenNode=event.target.parentNode.parentNode;
  const companyName=parenNode.querySelector('.company-name').innerText;
  const companyPosition=parenNode.querySelector('.company-position').innerText;
@@ -73,5 +73,8 @@ for(let interview of interviewList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
 }
+
 }
+
+
 
