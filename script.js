@@ -14,8 +14,10 @@ const interviewFilterBtn=document.getElementById('interview-filter-btn');
 const rejectedFilterBtn=document.getElementById('rejected-filter-btn');
 
 
+//event delegation
 const allCardSection=document.getElementById("allCards");
 allCardSection.addEventListener("click",function(event){
+    //checking the element I am clicking is inside something or not.
     if(event.target.closest('.btn-delete')){
         const card=event.target.closest('.card');
         if(card){
@@ -265,7 +267,15 @@ function calculateCount(){
     total.innerHTML=totalCards;
     interviewCount.innerText=interviewList.length;
     rejectedCount.innerHTML=rejectedList.length;
-    availableCount.innerText=`${totalCards} job${totalCards !=1 ? 's':''}`;
+    if(currentStatus === "all-filter-btn"){
+        availableCount.innerText=`${totalCards} job${totalCards !=1 ? 's':''}`;
+    }
+    else if(currentStatus === "interview-filter-btn"){
+         availableCount.innerText=`${interviewList.length} job${interviewList.length !=1 ? 's':''}`;
+    }
+    else if(currentStatus === "rejected-filter-btn"){
+        availableCount.innerText=`${rejectedList.length} job${rejectedList.length !=1 ? 's':''}`;
+    }
     const emptyAll= document.getElementById('empty-all');
     if(totalCards===0 && currentStatus==='all-filter-btn'){
         emptyAll.classList.remove('hidden');
