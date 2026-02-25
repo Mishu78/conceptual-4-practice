@@ -1,4 +1,4 @@
-
+//done
 // we are putting the list of interview information when interview button is clicked in blank array 
 let interviewList=[];
 let rejectedList=[];
@@ -8,12 +8,12 @@ let interviewCount=document.getElementById('interviewCount');
 let rejectedCount=document.getElementById('rejectedCount');
 
 //console.log(rejectedCount);
-
+//done
 const allFilterBtn=document.getElementById('all-filter-btn');
 const interviewFilterBtn=document.getElementById('interview-filter-btn');
 const rejectedFilterBtn=document.getElementById('rejected-filter-btn');
 
-
+//done
 //event delegation
 const allCardSection=document.getElementById("allCards");
 allCardSection.addEventListener("click",function(event){
@@ -26,7 +26,8 @@ allCardSection.addEventListener("click",function(event){
         }
     }
 })
-
+//done
+//deleting a job card when inside in the filtered section 
 const mainContainer=document.querySelector('main');
 const filteredSection=document.getElementById('filtered-section');
 filteredSection.addEventListener('click',function(event){
@@ -172,6 +173,7 @@ else if(currentStatus =="rejected-filter-btn"){
 
 })
 
+//done
 function renderInterview(){
 filteredSection.innerHTML='';
 
@@ -179,7 +181,8 @@ if(interviewList.length === 0){
     renderEmpty("No Interview Jobs");
     calculateCount();
     return;
-}
+} 
+//dynamic DOM rendering
 for(let interview of interviewList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
@@ -216,15 +219,17 @@ for(let interview of interviewList){
       calculateCount();
 } 
 
-
+//done
+//when call this function all interview jobs will be visible in the screen
 function renderRejected(){
-filteredSection.innerHTML='';
+filteredSection.innerHTML=''; // removing old content before updating new interview jobs
 
 if(rejectedList.length === 0){
     renderEmpty("No rejected Jobs");
     calculateCount();
     return; 
 }
+
 for(let rejected of rejectedList){
     let div=document.createElement('div');
     div.className= 'card flex flex-row justify-between mb-28'
